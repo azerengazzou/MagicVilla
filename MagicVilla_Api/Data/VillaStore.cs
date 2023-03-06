@@ -10,11 +10,14 @@ namespace MagicVilla_Api.Data
                 {
                     Id = 1,
                     Name = "Pool View",
+                    Superficie=400,
+                    NbRoom=5
                 },
                 new VillaDTO{
                     Id= 2,
                     Name="Ocean View",
-
+                    Superficie=300,
+                    NbRoom=4
                 }
             };
     }
