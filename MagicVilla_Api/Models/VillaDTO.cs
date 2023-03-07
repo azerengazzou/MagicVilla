@@ -13,5 +13,9 @@ namespace MagicVilla_Api.Models
         public int Superficie { get; set; }
         public int NbRoom { get; set; }
 
+        public string ImageUrl { get; set; }
+        [Required]
+        public double Rate { get; set; }
+
     }
 }

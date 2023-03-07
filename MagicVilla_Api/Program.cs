@@ -1,4 +1,6 @@
+using MagicVilla_Api.Data;
 using MagicVilla_Api.Logging;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 //using Serilog;
 
@@ -11,7 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 //    .WriteTo.File("log/VillaLog.txt",rollingInterval: RollingInterval.Day).CreateLogger();
 //builder.Host.UseSerilog();
 
-
+builder.Services.AddDbContext<ApplicationDbContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
+});
 
 
 builder.Services.AddControllers(option =>
@@ -23,8 +28,8 @@ builder.Services.AddControllers(option =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddSingleton<ILogging, Logging>(); //Injection de dépendance 
-builder.Services.AddSingleton<ILogging, LoggingV2>(); //Use loggingV2 instead logging
+////builder.Services.AddSingleton<ILogging, Logging>(); //Injection de dépendance 
+//builder.Services.AddSingleton<ILogging, LoggingV2>(); //Use loggingV2 instead logging
 
 var app = builder.Build();
 

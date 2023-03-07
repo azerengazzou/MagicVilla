@@ -17,16 +17,21 @@ namespace MagicVilla_Api.Controllers
             _logger = logger;
         }*/
 
-        private readonly ILogging _logger;
-        public VillaAPIController(ILogging logger)
+        //private readonly ILogging _logger;
+        //public VillaAPIController(ILogging logger)
+        //{
+        //    _logger = logger;
+        //}
+
+        public VillaAPIController()
         {
-            _logger = logger;
+            
         }
 
         [HttpGet]
         public ActionResult<IEnumerable<VillaDTO>> GetVillas()
         {
-            _logger.Log("getting all villa ","");
+            //_logger.Log("getting all villa ","");
             return Ok(VillaStore.VillaList);
         }
 
@@ -44,7 +49,7 @@ namespace MagicVilla_Api.Controllers
 
             if(id == 0)
             {
-                _logger.Log("get villa error!" + id, "error");
+                //_logger.Log("get villa error!" + id, "error");
                 return BadRequest();
             }
             var villa=VillaStore.VillaList.FirstOrDefault(x => x.Id == id);
