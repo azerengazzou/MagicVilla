@@ -1,6 +1,8 @@
 using MagicVilla_Api;
 using MagicVilla_Api.Data;
 using MagicVilla_Api.Logging;
+using MagicVilla_Api.Repository;
+using MagicVilla_Api.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 //using Serilog;
@@ -13,6 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 //Log.Logger = new LoggerConfiguration().MinimumLevel.Information()
 //    .WriteTo.File("log/VillaLog.txt",rollingInterval: RollingInterval.Day).CreateLogger();
 //builder.Host.UseSerilog();
+
+builder.Services.AddScoped<IVillaRepository,VillaRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
