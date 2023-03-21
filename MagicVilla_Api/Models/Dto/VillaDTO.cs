@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace MagicVilla_Api.Models
+namespace MagicVilla_Api.Models.Dto
 {
-    public class VillaCreateDTO
+    public class VillaDTO
     {
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(30)]

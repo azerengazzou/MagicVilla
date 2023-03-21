@@ -16,6 +16,8 @@ namespace MagicVilla_Api.Models
         public double Rate { get; set; }
         public DateTime Created_date { get; set; }
         public DateTime Updated_date { get; set; }
+
+
         
     }
 }

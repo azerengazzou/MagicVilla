@@ -11,6 +11,10 @@ namespace MagicVilla_Api.Data
             
         }
         public DbSet<Villa> Villas { get; set; }
+
+        public DbSet<VillaBooking> VillaBookings { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Villa>().HasData(

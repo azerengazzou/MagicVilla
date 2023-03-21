@@ -65,7 +65,7 @@ namespace MagicVilla_Api.Migrations
                         new
                         {
                             Id = 12345,
-                            Created_date = new DateTime(2023, 3, 8, 10, 8, 20, 226, DateTimeKind.Local).AddTicks(7402),
+                            Created_date = new DateTime(2023, 3, 21, 10, 8, 10, 746, DateTimeKind.Local).AddTicks(4953),
                             Description = "Description villa Sousse",
                             ImageUrl = "https://cdn.pixabay.com/photo/2017/09/17/18/15/lost-places-2759275_960_720.jpg",
                             Name = "Villa Sousse",
@@ -77,7 +77,7 @@ namespace MagicVilla_Api.Migrations
                         new
                         {
                             Id = 12344,
-                            Created_date = new DateTime(2023, 3, 8, 10, 8, 20, 226, DateTimeKind.Local).AddTicks(7422),
+                            Created_date = new DateTime(2023, 3, 21, 10, 8, 10, 746, DateTimeKind.Local).AddTicks(5105),
                             Description = "Description villa Tunis",
                             ImageUrl = "https://cdn.pixabay.com/photo/2018/03/18/15/26/villa-3237114_960_720.jpg",
                             Name = "Villa Tunis",
@@ -89,7 +89,7 @@ namespace MagicVilla_Api.Migrations
                         new
                         {
                             Id = 12340,
-                            Created_date = new DateTime(2023, 3, 8, 10, 8, 20, 226, DateTimeKind.Local).AddTicks(7425),
+                            Created_date = new DateTime(2023, 3, 21, 10, 8, 10, 746, DateTimeKind.Local).AddTicks(5109),
                             Description = "Description villa Monastir",
                             ImageUrl = "https://cdn.pixabay.com/photo/2017/04/10/22/28/residence-2219972_960_720.jpg",
                             Name = "Villa Monastir",
@@ -98,6 +98,26 @@ namespace MagicVilla_Api.Migrations
                             Superficie = 800,
                             Updated_date = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
+                });
+
+            modelBuilder.Entity("MagicVilla_Api.Models.VillaBooking", b =>
+                {
+                    b.Property<int>("BookingNum")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SpecialDetails")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("BookingNum");
+
+                    b.ToTable("VillaBookings");
                 });
 #pragma warning restore 612, 618
         }
